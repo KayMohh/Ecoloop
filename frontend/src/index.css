@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-eco-green: #10b981;
+  --color-eco-dark: #064e3b;
+  --color-eco-light: #d1fae5;
+}
 
 @layer base {
   body {

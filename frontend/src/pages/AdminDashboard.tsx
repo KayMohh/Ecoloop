@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../api';
 import { Loader2, TrendingUp, RefreshCw, Box } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
@@ -36,7 +36,7 @@ export default function AdminDashboard() {
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       <h1 className="text-2xl font-bold text-gray-800">System Overview</h1>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-center gap-4">
           <div className="bg-blue-100 p-4 rounded-xl text-blue-600"><Box size={24} /></div>
@@ -45,7 +45,7 @@ export default function AdminDashboard() {
             <p className="text-3xl font-bold text-gray-800">{stats.total_collected}</p>
           </div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex items-center gap-4">
           <div className="bg-green-100 p-4 rounded-xl text-green-600"><TrendingUp size={24} /></div>
           <div>
@@ -77,7 +77,7 @@ export default function AdminDashboard() {
                 paddingAngle={5}
                 dataKey="value"
               >
-                {chartData.map((entry, index) => (
+                {chartData.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
